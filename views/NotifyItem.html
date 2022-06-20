@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <link
+            href="https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css"
+            rel="stylesheet"
+        />
+
+        <link
+            rel="stylesheet"
+            href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        />
+
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+            integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+            crossorigin="anonymous"
+        />
+
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css"
+        />
+
+        <link rel="stylesheet" href="../../public/css/style.css" />
+
+        <title>Social Media</title>
+    </head>
+
+    <body id="body-pd" class="body-pd">
+        <header class="header body-pd" id="header">
+            <div class="header__toggle">
+                <i class="bx bx-menu" id="header-toggle"></i>
+            </div>
+
+            <div class="header__img">
+                <img src="" alt="" />
+            </div>
+        </header>
+
+        <div class="l-navbar show" id="nav-bar">
+            <nav class="nav">
+                <div>
+                    <a href="#" class="nav__logo">
+                        <i class="bx bx-layer nav__logo-icon"></i>
+                        <span class="nav__logo-name">Dept Management</span>
+                    </a>
+
+                    <div class="nav__list">
+                        <a href="#" class="nav__link">
+                            <i class="bx bx-grid-alt nav__icon"></i>
+                            <span class="nav__name">Dept Management</span>
+                        </a>
+
+                        <a href="#" class="nav__link">
+                            <i class="bx bx-user nav__icon"></i>
+                            <span class="nav__name">Team Management</span>
+                        </a>
+                        <a href="#" class="nav__link">
+                            <i class="bx bx-bookmark nav__icon"></i>
+                            <span class="nav__name">Staff Management</span>
+                        </a>
+                    </div>
+                </div>
+
+                <a href="login.html" class="nav__link">
+                    <i class="bx bx-log-out nav__icon"></i>
+                    <span class="nav__name">Đăng xuất</span>
+                </a>
+            </nav>
+        </div>
+        <div id="layoutSidenav_content">
+
+{{#if roleOfRoom}}
+<div class="card-header">
+<div>
+    <button data-toggle="modal" data-target="#editNotiModal2" class="btn btn-link btn-sm order-0 order-lg-0 btnEditNoty2"><a><i class="fas fa-plus"></i>Chỉnh sửa</button></a>
+</div>
+{{/if}}
+
+<div class="col-md-12">
+        <h2 class="newsTitle">{{n._doc.title}}</h2>
+        <div class="rnews-article-summary">Phòng: {{n._doc.room}}</div>
+        <br>
+        <div class="rnews-article-summary">Ngày đăng: {{#formatDate n._doc.createAt}}{{/formatDate}}</div>
+        <div class="newsContent">{{n._doc.content}}</div>
+</div>
+
+<!-- edit notify -->
+<div class="modal fade" id="editNotiModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Chỉnh sửa thông báo</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+            </button>
+            </div>
+            <div class="modal-body">
+
+                <input hidden type="text" name="idNotify2" id="idNotify2" value="{{n._doc._id}}">
+                <div class="form-label-group">
+                    <input value="{{n._doc.title}}" name="editTitle2" type="text" id="editTitle2" class="form-control" placeholder="Chủ đề" autofocus>
+                    <label for="editChuDe2"></label>
+                </div>
+                <br>
+                 <div class="form-label-group">
+                    <textarea name="editContent2" id="editContent2" cols="30" rows="10" placeholder="Nội dung">{{n._doc.content}}</textarea>
+                </div>
+
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-primary saveEditNotify2">Save</button>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+        </div>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+
+        <script
+            src="https://cdnjs.cloudflare.com/ajax/libs/notify/0.4.2/notify.min.js"
+            integrity="sha512-efUTj3HdSPwWJ9gjfGR71X9cvsrthIA78/Fvd/IN+fttQVy7XWkOAXb295j8B3cmm/kFKVxjiNYzKw9IQJHIuQ=="
+            crossorigin="anonymous"
+        ></script>
+
+        <script src="../../public/js/main.js"></script>
+    </body>
+</html>

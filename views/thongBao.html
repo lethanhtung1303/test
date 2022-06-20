@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <link
+            href="https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css"
+            rel="stylesheet"
+        />
+
+        <link
+            rel="stylesheet"
+            href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        />
+
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+            integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+            crossorigin="anonymous"
+        />
+
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css"
+        />
+
+        <link rel="stylesheet" href="../../public/css/style.css" />
+
+        <title>Social Media</title>
+    </head>
+
+    <body id="body-pd" class="body-pd">
+        <header class="header body-pd" id="header">
+            <div class="header__toggle">
+                <i class="bx bx-menu" id="header-toggle"></i>
+            </div>
+
+            <div class="header__img">
+                <img src="" alt="" />
+            </div>
+        </header>
+
+        <div class="l-navbar show" id="nav-bar">
+            <nav class="nav">
+                <div>
+                    <a href="#" class="nav__logo">
+                        <i class="bx bx-layer nav__logo-icon"></i>
+                        <span class="nav__logo-name">Dept Management</span>
+                    </a>
+
+                    <div class="nav__list">
+                        <a href="#" class="nav__link">
+                            <i class="bx bx-grid-alt nav__icon"></i>
+                            <span class="nav__name">Dept Management</span>
+                        </a>
+
+                        <a href="#" class="nav__link">
+                            <i class="bx bx-user nav__icon"></i>
+                            <span class="nav__name">Team Management</span>
+                        </a>
+                        <a href="#" class="nav__link">
+                            <i class="bx bx-bookmark nav__icon"></i>
+                            <span class="nav__name">Staff Management</span>
+                        </a>
+                    </div>
+                </div>
+
+                <a href="login.html" class="nav__link">
+                    <i class="bx bx-log-out nav__icon"></i>
+                    <span class="nav__name">Đăng xuất</span>
+                </a>
+            </nav>
+        </div>
+        <div id="layoutSidenav_content">
+            <div class="card-header">
+                <div>
+                    <button class="btn btn-link btn-sm order-0 order-lg-0" href=""><a href="/notification/all"><i class="fas fa-plus"></i>Xem tất cả các thông báo</button></a>
+                </div>
+                {{#if isSV}}
+                {{else}}
+                <div >
+                    <button data-toggle="modal" data-target="#AddNotiModal" class="btn btn-link btn-sm order-0 order-lg-0 addNotify" id="sidebarToggle" href="#"><i class="fas fa-plus"><a href="3"></a></i>Thêm thông báo mới</button>
+                </div>
+                {{/if}}
+                </div>
+
+                <div class="row">
+                    <div class="col-xl-3 col-md-6 mb-5  ">
+                        <div class="card bg-primary text-white mb-4 h-100 ">
+                            <div class="card-body">Phòng CTHSSV</div>
+                            <div class="card-footer d-flex align-items-center justify-content-between">
+                                <a class="small text-white stretched-link" href="notification/CTHSSV">View Details</a>
+                                <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-md-6 mb-5 ">
+                        <div class="card bg-warning text-white mb-4 h-100 ">
+                            <div class="card-body">Phòng Đại học</div>
+                            <div class="card-footer d-flex align-items-center justify-content-between">
+                                <a class="small text-white stretched-link" href="notification/DH">View Details</a>
+                                <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-md-6 mb-5  ">
+                        <div class="card bg-success text-white mb-4 h-100 ">
+                            <div class="card-body">Phòng Sau Đại học</div>
+                            <div class="card-footer d-flex align-items-center justify-content-between">
+                                <a class="small text-white stretched-link" href="notification/SDH">View Details</a>
+                                <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-md-6 mb-5  ">
+                        <div class="card bg-danger text-white mb-4 h-100 ">
+                            <div class="card-body">Phòng Điện toán và máy tính</div>
+                            <div class="card-footer d-flex align-items-center justify-content-between">
+                                <a class="small text-white stretched-link" href="notification/DTVDM">View Details</a>
+                                <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-md-6 mb-5  ">
+                        <div class="card bg-success text-white mb-4 h-100 ">
+                            <div class="card-body">Phòng Khảo thí và kiểm định</div>
+                            <div class="card-footer d-flex align-items-center justify-content-between">
+                                <a class="small text-white stretched-link" href="notification/KT">View Details</a>
+                                <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-md-6 mb-5  ">
+                        <div class="card bg-primary text-white mb-4 h-100 ">
+                            <div class="card-body">Phòng tài chính</div>
+                            <div class="card-footer d-flex align-items-center justify-content-between">
+                                <a class="small text-white stretched-link" href="notification/TC">View Details</a>
+                                <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-md-6 mb-5 ">
+                        <div class="card bg-danger text-white mb-4 h-100 ">
+                            <div class="card-body">TDT Creative Language Center</div>
+                            <div class="card-footer d-flex align-items-center justify-content-between">
+                                <a class="small text-white stretched-link" href="notification/CLC">View Details</a>
+                                <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-md-6 mb-5  ">
+                        <div class="card bg-warning text-white mb-4 h-100 ">
+                            <div class="card-body">Trung tâm tin học</div>
+                            <div class="card-footer d-flex align-items-center justify-content-between">
+                                <a class="small text-white stretched-link" href="notification/TH">View Details</a>
+                                <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-md-6 mb-5  ">
+                        <div class="card bg-danger text-white mb-4 h-100 ">
+                            <div class="card-body">Trung tâm đào tạo và phát triển xã hội</div>
+                            <div class="card-footer d-flex align-items-center justify-content-between">
+                                <a class="small text-white stretched-link" href="notification/SDTC">View Details</a>
+                                <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-md-6 mb-5  ">
+                        <div class="card bg-warning text-white mb-4 h-100 ">
+                            <div class="card-body">Trung tâm phát triển Khoa học quản lí và Ứng dụng công nghệ</div>
+                            <div class="card-footer d-flex align-items-center justify-content-between">
+                                <a class="small text-white stretched-link" href="notification/ATEM">View Details</a>
+                                <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-md-6 mb-5  ">
+                        <div class="card bg-primary text-white mb-4 h-100 ">
+                            <div class="card-body">Trung tâm hợp tác doanh nghiệp và cựu sinh viên</div>
+                            <div class="card-footer d-flex align-items-center justify-content-between">
+                                <a class="small text-white stretched-link" href="notification/CSV">View Details</a>
+                                <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-md-6 mb-5  ">
+                        <div class="card bg-success text-white mb-4 h-100 ">
+                            <div class="card-body">Khoa Luật</div>
+                            <div class="card-footer d-flex align-items-center justify-content-between">
+                                <a class="small text-white stretched-link" href="notification/KL">View Details</a>
+                                <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-md-6 mb-5  ">
+                        <div class="card bg-primary text-white mb-4 h-100 ">
+                            <div class="card-body">Trung tâm ngoại ngữ-tin học-bồi dưỡng văn hóa</div>
+                            <div class="card-footer d-flex align-items-center justify-content-between">
+                                <a class="small text-white stretched-link" href="notification/NNTHVH">View Details</a>
+                                <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-md-6 mb-5  ">
+                        <div class="card bg-warning text-white mb-4 h-100 ">
+                            <div class="card-body">Viện chính sách kinh tế và kinh doanh</div>
+                            <div class="card-footer d-flex align-items-center justify-content-between">
+                                <a class="small text-white stretched-link" href="notification/KTKD">View Details</a>
+                                <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-md-6 mb-5  ">
+                        <div class="card bg-primary text-white mb-4 h-100 ">
+                            <div class="card-body">Khoa Mỹ thuật công nghiệp</div>
+                            <div class="card-footer d-flex align-items-center justify-content-between">
+                                <a class="small text-white stretched-link" href="notification/MTCN">View Details</a>
+                                <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-md-6 mb-5  ">
+                        <div class="card bg-success text-white mb-4 h-100 ">
+                            <div class="card-body">Khoa Điện-Điện tử</div>
+                            <div class="card-footer d-flex align-items-center justify-content-between">
+                                <a class="small text-white stretched-link" href="notification/DDT">View Details</a>
+                                <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-md-6 mb-5  ">
+                        <div class="card bg-primary text-white mb-4 h-100 ">
+                            <div class="card-body">Khoa Công nghệ thông tin</div>
+                            <div class="card-footer d-flex align-items-center justify-content-between">
+                                <a class="small text-white stretched-link" href="notification/CNTT">View Details</a>
+                                <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-md-6 mb-5  ">
+                        <div class="card bg-warning text-white mb-4 h-100 ">
+                            <div class="card-body">Khoa Quản trị kinh doanh</div>
+                            <div class="card-footer d-flex align-items-center justify-content-between">
+                                <a class="small text-white stretched-link" href="notification/QTKD">View Details</a>
+                                <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-md-6 mb-5  ">
+                        <div class="card bg-success text-white mb-4 h-100 ">
+                            <div class="card-body">Khoa Môi trường và bảo hộ lao động</div>
+                            <div class="card-footer d-flex align-items-center justify-content-between">
+                                <a class="small text-white stretched-link" href="notification/MT">View Details</a>
+                                <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-md-6 mb-5  ">
+                        <div class="card bg-warning text-white mb-4 h-100 ">
+                            <div class="card-body">Khoa Lao động công đoàn</div>
+                            <div class="card-footer d-flex align-items-center justify-content-between">
+                                <a class="small text-white stretched-link" href="notification/LDCD">View Details</a>
+                                <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-md-6 mb-5  ">
+                        <div class="card bg-primary text-white mb-4 h-100 ">
+                            <div class="card-body">Khoa Tài chính ngân hàng</div>
+                            <div class="card-footer d-flex align-items-center justify-content-between">
+                                <a class="small text-white stretched-link" href="notification/TCNH">View Details</a>
+                                <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-md-6 mb-5  ">
+                        <div class="card bg-success text-white mb-4 h-100 ">
+                            <div class="card-body">Khoa Giáo dục quốc tế</div>
+                            <div class="card-footer d-flex align-items-center justify-content-between">
+                                <a class="small text-white stretched-link" href="notification/GDQT">View Details</a>
+                                <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- thêm thông báo -->
+                <div class="modal fade" id="AddNotiModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLongTitle">Thêm thông báo mới</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                            </button>
+                            </div>
+                            <div class="modal-body">
+                                <form class="formCreateNotify" action="" method="POST">
+                                <div class="form-label-group">
+                                    <input name="title" type="text" id="inputChuDe" class="form-control" placeholder="Chủ đề" autofocus>
+                                    <label for="inputChuDe"></label>
+                                </div>
+                                {{#if role}}
+
+                                <div class="form-label-group">
+                                    <label for="room"></label>
+                                        <select name="room" id="room" class="form-control">
+                                            {{#if isAD}}
+                                                <option id="CTHSSV" value="CTHSSV">Phòng CTHSSV</option>
+                                            <option id="DH" value="DH">Phòng Đại học</option>
+                                            <option id="SDH" value="SDH">Phòng Sau Đại học</option>
+                                            <option id="DTVDM" value="DTVMT">Phòng Điện toán và máy tính</option>
+                                            <option id="KT" value="KT">Phòng Khảo thí và kiểm định</option>
+                                            <option id="TC" value="TC">Phòng tài chính</option>
+                                            <option id="CLC" value="CLC">TDT Creative Language Center</option>
+                                            <option id="TH" value="TH">Trung tâm tin học</option>
+                                            <option id="SDTC" value="SDTC">Trung tâm đào tạo và phát triển xã hội</option>
+                                            <option id="ATEM" value="ATEM">Trung tâm phát triển Khoa học quản lí và Ứng dụng công nghệ
+                                            </option>
+                                            <option id="CSV" value="CSV">Trung tâm hợp tác doanh nghiệp và cựu sinh viên</option>
+                                            <option id="KL" value="KL">Khoa Luật</option>
+                                            <option id="NNTHVH" value="NNTHVH">Trung tâm ngoại ngữ-tin học-bồi dưỡng văn hóa</option>
+                                            <option id="KTKD" value="KTKD">Viện chính sách kinh tế và kinh doanh</option>
+                                            <option id="MTCN" value="MTCN">Khoa Mỹ thuật công nghiệp</option>
+                                            <option id="DDT" value="DDT">Khoa Điện-Điện tử</option>
+                                            <option id="CNTT" value="CNTT">Khoa Công nghệ thông tin</option>
+                                            <option id="QTKD" value="QTKD">Khoa Quản trị kinh doanh</option>
+                                            <option id="MT" value="MT">Khoa Môi trường và bảo hộ lao động</option>
+                                            <option id="LDCD" value="LDCD">Khoa Lao động công đoàn</option>
+                                            <option id="TCNH" value="TCNH">Khoa Tài chính ngân hàng</option>
+                                            <option id="GDQT" value="GDQT">Khoa Giáo dục quốc tế</option>
+                                            {{else}}
+                                                {{#each role}}
+                                            <option id="{{this}}" value="{{this}}">{{this}}</option>
+                                            {{/each}}
+                                            {{/if}}
+                                        </select>
+                                </div>
+
+
+                                {{/if}}
+                                <br>
+                                 <div class="form-label-group">
+                                    <textarea name="content" id="content" cols="30" rows="10" placeholder="Nội dung"></textarea>
+                                </div>
+
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" data-idUser="{{id}}" class="btn btn-primary btnCreateNotify">Save</button>
+                            </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+
+        </div>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+
+        <script
+            src="https://cdnjs.cloudflare.com/ajax/libs/notify/0.4.2/notify.min.js"
+            integrity="sha512-efUTj3HdSPwWJ9gjfGR71X9cvsrthIA78/Fvd/IN+fttQVy7XWkOAXb295j8B3cmm/kFKVxjiNYzKw9IQJHIuQ=="
+            crossorigin="anonymous"
+        ></script>
+
+        <script src="../../public/js/main.js"></script>
+    </body>
+</html>
